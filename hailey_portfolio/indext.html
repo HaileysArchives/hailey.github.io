@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yewon's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">HZ.</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Dribbble</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="intro">
+                <h1>Hello, <br> I'm Yewon.</h1>
+                <p>I am an aspiring Data Scientist with a background in Data Engineering and Statistics, recently completing the POSCO Big Data & AI Bootcamp, and skilled in Python, Java.</p>
+                <a href="#next-section" class="work-link">Check out my work</a>
+                <div class="arrow"><a href="#next-section">⬇</a></div>
+            </div>
+            <div class="illustration">
+                <img src="yewon-image.png" alt="Yewon Illustration" />
+            </div>
+        </main>
+
+        <!-- Next Section -->
+        <section id="next-section" style="min-height: 100vh; padding: 50px; background-color: #f4f4f4;">
+            <h2>My Projects</h2>
+            <p>This section contains detailed information about my past projects.</p>
+        </section>
+
+    </div>
+
+    <script>
+        // Smooth scroll functionality for arrow
+        $(document).ready(function(){
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

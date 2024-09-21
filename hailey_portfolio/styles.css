@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f0e9;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px; /* 상단 간격을 줄임 */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.intro {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.intro p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.work-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.illustration {
+    flex: 1;
+    text-align: center;
+}
+
+.illustration img {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Arrow styling */
+.arrow {
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+.arrow a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro {
+        padding-right: 0;
+    }
+
+    .illustration img {
+        max-width: 300px;
+    }
+}
