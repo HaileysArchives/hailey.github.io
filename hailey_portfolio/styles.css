@@ -1,121 +1,163 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Regular 폰트 정의 */
+@font-face {
+    font-family: 'CoreSans';
+    src: url('fonts/CoreSansC-45Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+/* Medium 폰트 정의 */
+@font-face {
+    font-family: 'CoreSans';
+    src: url('fonts/CoreSansC-55Medium.ttf') format('truetype');
+    font-weight: 500;  /* Medium 폰트에 해당하는 weight */
+    font-style: normal;
+}
+
+/* Bold 폰트 정의 */
+@font-face {
+    font-family: 'CoreSans';
+    src: url('fonts/CoreSansC-65Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* ExtraBold 폰트 정의 */
+@font-face {
+    font-family: 'CoreSans';
+    src: url('fonts/CoreSansC-75ExtraBold.ttf') format('truetype');
+    font-weight: 800;  /* ExtraBold에 해당하는 weight */
+    font-style: normal;
+}
+
+/* Basic styles */
+/* Regular를 기본 폰트로 사용하는 예 */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f6f0e9;
-    color: #1a1a1a;
+    font-family: 'CoreSans', sans-serif; /* 기본 Regular 폰트, sans-serif는 백업 폰트로, 브러우저가 기본으로 제공하는 sans-serif 계열의 폰트를 사용하도록 하는 설정 */
+    background-color: #fdf6e3;
+    font-weight: 500; /*Medium 폰트 적용 */
     margin: 0;
     padding: 0;
 }
+
+/* "CoreSans"는 우리가 불러온 사용자 정의 폰트이고, sans-serif는 그 폰트가 로드되지 않았을 경우에 대비한 기본 폰트 */
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
 }
 
 header {
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px; /* 상단 간격을 줄임 */
-    position: absolute;
-    top: 0;
-    left: 0;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fdf6e3;
 }
 
-.logo {
-    font-size: 1.5rem;
+header .logo {
+    font-size: 24px;
     font-weight: bold;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
     gap: 30px;
+    margin: 0;
 }
 
-nav a {
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: #1a1a1a;
-    font-weight: bold;
+    color: black;
+    font-size: 16px;
 }
 
 main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
-    max-width: 1200px;
-    width: 100%;
+    height: 80vh;
+    padding: 0 50px;
 }
 
 .intro {
-    flex: 1;
-    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.intro h1 {
-    font-size: 3rem;
-    line-height: 1.2;
+.text-content {
+    max-width: 50%;
 }
 
-.intro p {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    line-height: 1.5;
+h1 {
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.work-link {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #1a1a1a;
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 5px;
-}
-
-.illustration {
-    flex: 1;
-    text-align: center;
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
 }
 
 .illustration img {
-    width: 100%;
-    max-width: 400px;
+    max-width: 100%;
+    height: auto;
 }
 
-/* Arrow styling */
-.arrow {
-    margin-top: 20px;
-    font-size: 2rem;
+.arrow-down {
+    margin-top: 30px;
 }
 
-.arrow a {
+.arrow-down a {
+    font-size: 40px;
     text-decoration: none;
-    color: #1a1a1a;
+    color: black;
+}
+
+.arrow-down a:hover {
+    cursor: pointer;
+}
+
+section {
+    text-align: center;
+    padding-top: 50px;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .text-content, .illustration {
+        max-width: 100%;
         text-align: center;
     }
 
-    .intro {
-        padding-right: 0;
+    h1 {
+        font-size: 40px;
     }
 
-    .illustration img {
-        max-width: 300px;
+    p {
+        font-size: 16px;
+    }
+
+    .arrow-down {
+        margin-top: 20px;
+    }
+
+    .arrow-down a {
+        font-size: 30px;
     }
 }
